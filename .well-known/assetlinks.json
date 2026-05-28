@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.zuvora.zuvora_football_app",
+      "sha256_cert_fingerprints": [
+        "12:DD:51:44:B2:A9:2C:C6:26:F7:31:E7:D8:CA:28:25:EB:FA:B2:C5:F4:14:24:C3:DD:AE:B1:B3:D1:8F:CD:A7"
+      ]
+    }
+  }
+]
