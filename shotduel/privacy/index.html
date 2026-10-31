@@ -28,7 +28,7 @@
     <p class="lang"><a href="/shotduel/gizlilik/">Türkçe</a></p>
 
     <h2>1. Summary</h2>
-    <p>ShotDuel needs <strong>no account, no e-mail and no phone number.</strong> The game works largely offline. Your identity is a random key generated on your own phone, which we cannot see either.</p>
+    <p>ShotDuel needs <strong>no account, no e-mail and no phone number.</strong> The game works largely offline. When the game first connects to the league, our server gives your phone a random device id and a secret key. The server makes that key from the id and a master key only it holds, so it is not secret from us: the server can work it out again, and uses it to check that match reports really come from your phone.</p>
     <p>Data leaves your device only in these cases:</p>
     <ul>
       <li><strong>When you play an online match:</strong> your display name, shirt number, cosmetics, character look and rating go to your opponent and to the matchmaking service. Your <strong>IP address</strong> is used to make the connection (see 2.2).</li>
@@ -44,7 +44,7 @@
     <p>This <strong>never leaves your device</strong> and is gone when you delete the app.</p>
     <ul>
       <li>Game progress (level, coins, unlocked cosmetics, records)</li>
-      <li>A device secret (32 random bytes that stand in for a password)</li>
+      <li>A device secret (32 bytes the league server made for your phone from its own master key; it stands in for a password)</li>
       <li>Your recovery code (to get your account back on a new phone)</li>
       <li>Sound, vibration and language preferences</li>
       <li>The list of players you have blocked</li>
