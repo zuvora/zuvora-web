@@ -24,7 +24,7 @@
 <body>
   <div class="container">
     <h1>ShotDuel Privacy Policy</h1>
-    <p class="date">Last updated: 28 October 2026 · Controller: Zuvora — <a href="mailto:hello@zuvora.app">hello@zuvora.app</a></p>
+    <p class="date">Last updated: 31 October 2026 · Controller: Zuvora — <a href="mailto:hello@zuvora.app">hello@zuvora.app</a></p>
     <p class="lang"><a href="/shotduel/gizlilik/">Türkçe</a></p>
 
     <h2>1. Summary</h2>
@@ -34,6 +34,7 @@
       <li><strong>When you play an online match:</strong> your display name, shirt number, cosmetics, character look and rating go to your opponent and to the matchmaking service. Your <strong>IP address</strong> is used to make the connection (see 2.2).</li>
       <li><strong>When an ad is shown:</strong> ads are served by Google AdMob, which uses your device's advertising ID and IP address (see 2.3).</li>
       <li><strong>When you report a player:</strong> you send us a report from your own e-mail app (see 2.4).</li>
+      <li><strong>When you take part in the weekly league:</strong> your player id, shirt name and number, country (if you chose one) and match results go to Zuvora's league server in Germany (see 2.5).</li>
     </ul>
     <p>We do not want your photos or your contacts, we do not ask for your phone's location, and we do not work out a location from your IP address. You should still know that an IP address can reveal an <strong>approximate location</strong> (usually the city or region).</p>
 
@@ -78,8 +79,15 @@
     <h3>2.4 Reporting and blocking players</h3>
     <p>When you report a player's name, your e-mail app opens with a ready-made report to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>: the reported name, player id, match id and time. Sending it is up to you; if you do, we use your e-mail address and the report only to review inappropriate content. The players you block are kept on your phone only.</p>
 
-    <h3>2.5 Not enabled yet</h3>
-    <p><strong>The league server is not deployed yet.</strong> When it is, your username, country, crest, match results and rating will be stored on Zuvora's server in Germany (Hetzner), and this policy will be updated that day.</p>
+    <h3>2.5 League server</h3>
+    <p>Since 30 October 2026 the weekly league runs on <strong>Zuvora's own server</strong> (shotduel-api.zuvora.app), hosted by Hetzner Cloud in <strong>Germany (EU)</strong>. Its database is backed up continuously to Cloudflare R2 storage restricted to the EU. The first time the app connects to the league it registers your phone; after every online match both phones send the server a signed match report. The server stores:</p>
+    <ul>
+      <li><strong>Player record:</strong> a random player id (not a name, e-mail or phone number), your shirt name and number, your country if you chose one, your league rating, match and win counts, and fair-play counters (matches whose two reports disagreed or arrived from one side only, a review flag, a temporary ban if one was applied)</li>
+      <li><strong>Device record:</strong> a random device id, a SHA-256 hash of the app's random install id (the install id itself is not stored), platform, app version, the <strong>IP address the phone registered from</strong>, and when the device was first and last seen</li>
+      <li><strong>Match reports and results:</strong> match id, both players' ids, score, result and how the match ended, whether it was ranked, the friend-room code if there was one, ratings before and after, and when the report arrived</li>
+      <li><strong>Weekly standings and rewards:</strong> league, points, wins, goals, final rank, and coin or badge rewards</li>
+    </ul>
+    <p>The IP address is used to limit how many registrations can come from one address (abuse prevention). It is saved once, at registration, and is not used to work out a location. No e-mail, phone number, advertising ID or location is sent to this server. Your shirt name, number, country and weekly points are shown to other players on the leaderboard.</p>
 
     <h3>2.6 Never collected</h3>
     <p>Photos · camera · microphone · location (neither your phone's location nor one worked out from your IP address) · contacts · SMS · phone number · payment details. We only get your e-mail address if you write to us yourself.</p>
@@ -89,8 +97,8 @@
 
     <h2>4. Your rights (GDPR / KVKK art. 11)</h2>
     <ul>
-      <li><strong>Deletion.</strong> Deleting the app deletes everything held on your phone. <strong>Settings → Delete my account</strong> deletes your username, rating, coins, progress and your server record; you may also write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>. It cannot be undone.</li>
-      <li><strong>What is kept after deletion.</strong> Two things, both for fraud prevention: (1) your username is held back from new registrations for 30 days and is shown nowhere in that time; (2) your match records (date, result, opponent id) are kept with your name removed for at most 30 days. Nothing else is retained.</li>
+      <li><strong>Deletion.</strong> Deleting the app deletes everything held on your phone. <strong>Settings → Delete my account</strong> deletes your username, coins and progress on the phone and, on the league server, removes your shirt name and country, your weekly standings and rewards, and permanently disables your phone's sign-in key; you may also write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>. It cannot be undone.</li>
+      <li><strong>What is kept after deletion.</strong> For fraud prevention the league server keeps, under the random ids only and with no name attached: your player record's rating and match counters, your match reports and results, and the device record (install-id hash, platform, app version, registration IP). The server does not yet delete these automatically after a fixed period; to have them erased as well, write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>.</li>
       <li><strong>Access and correction.</strong> You may request access to, or correction of, anything held for you.</li>
       <li><strong>Objection.</strong> Choosing not to play online means nothing is sent to matchmaking; you can change your ad choices in Settings.</li>
     </ul>

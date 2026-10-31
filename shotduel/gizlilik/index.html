@@ -24,7 +24,7 @@
 <body>
   <div class="container">
     <h1>ShotDuel Gizlilik Politikası</h1>
-    <p class="date">Son güncelleme: 28 Ekim 2026 · Veri sorumlusu: Zuvora — <a href="mailto:hello@zuvora.app">hello@zuvora.app</a></p>
+    <p class="date">Son güncelleme: 31 Ekim 2026 · Veri sorumlusu: Zuvora — <a href="mailto:hello@zuvora.app">hello@zuvora.app</a></p>
     <p class="lang"><a href="/shotduel/privacy/">English</a></p>
 
     <h2>1. Kısa özet</h2>
@@ -34,6 +34,7 @@
       <li><strong>Çevrimiçi maç oynadığınızda:</strong> görünen adınız, forma numaranız, kozmetikleriniz, karakter görünümünüz ve puanınız karşı oyuncuya ve eşleştirme altyapısına gider. Bağlantıyı kurmak için <strong>IP adresiniz</strong> de kullanılır (bkz. 2.2).</li>
       <li><strong>Reklam gösterildiğinde:</strong> reklamlar Google AdMob ile gösterilir; AdMob cihazınızın reklam kimliğini ve IP adresinizi kullanır (bkz. 2.3).</li>
       <li><strong>Bir oyuncuyu bildirdiğinizde:</strong> e-posta uygulamanızdan bize bir bildirim gönderirsiniz (bkz. 2.4).</li>
+      <li><strong>Haftalık lige katıldığınızda:</strong> oyuncu kimliğiniz, forma adınız ve numaranız, seçtiyseniz ülkeniz ve maç sonuçlarınız Zuvora'nın Almanya'daki lig sunucusuna gider (bkz. 2.5).</li>
     </ul>
     <p>Fotoğraf istemiyoruz, kişi listenize bakmıyoruz, telefonunuzun konumunu almıyoruz ve IP adresinizden konum çıkarmıyoruz. Yine de bilmenizi isteriz: bir IP adresi <strong>yaklaşık bir konumu</strong> (çoğunlukla şehir ya da bölge düzeyinde) ele verebilir.</p>
 
@@ -78,8 +79,15 @@
     <h3>2.4 Oyuncu bildirme ve engelleme</h3>
     <p>Bir oyuncunun adını bildirdiğinizde e-posta uygulamanız açılır ve <a href="mailto:hello@zuvora.app">hello@zuvora.app</a> adresine hazır bir bildirim yazılır: bildirilen ad, oyuncu kimliği, maç kimliği ve saat. E-postayı göndermek size kalmıştır; gönderirseniz e-posta adresinizi ve bildirimi yalnızca uygunsuz içeriği incelemek için kullanırız. Engellediğiniz oyuncular yalnızca telefonunuzda tutulur.</p>
 
-    <h3>2.5 Henüz açılmamış olan</h3>
-    <p><strong>Lig sunucusu henüz kurulmadı.</strong> Açıldığında kullanıcı adınız, ülkeniz, armanız, maç sonuçlarınız ve puanınız Zuvora'nın Almanya'daki sunucusunda (Hetzner) tutulacak ve bu metin o gün güncellenecek.</p>
+    <h3>2.5 Lig sunucusu</h3>
+    <p>30 Ekim 2026'dan beri haftalık lig <strong>Zuvora'nın kendi sunucusunda</strong> (shotduel-api.zuvora.app) çalışır; sunucu Hetzner Cloud üzerinde, <strong>Almanya'da (AB)</strong> barındırılır. Veritabanı, AB sınırları içinde tutulan Cloudflare R2 depolamasına sürekli yedeklenir. Uygulama lige ilk bağlandığında telefonunuzu kaydeder; her çevrimiçi maçtan sonra iki telefon da sunucuya imzalı bir maç raporu gönderir. Sunucuda tutulanlar:</p>
+    <ul>
+      <li><strong>Oyuncu kaydı:</strong> rastgele bir oyuncu kimliği (ad, e-posta ya da telefon numarası değildir), forma adınız ve numaranız, seçtiyseniz ülkeniz, lig puanınız, maç ve galibiyet sayılarınız ve adil oyun sayaçları (iki raporu uyuşmayan ya da yalnızca bir taraftan gelen maçlar, inceleme işareti, uygulandıysa geçici yasak)</li>
+      <li><strong>Cihaz kaydı:</strong> rastgele bir cihaz kimliği, uygulamanın rastgele kurulum kimliğinin SHA-256 özeti (kurulum kimliğinin kendisi saklanmaz), platform, uygulama sürümü, <strong>telefonun kayıt olduğu IP adresi</strong> ve cihazın ilk ve son görüldüğü zaman</li>
+      <li><strong>Maç raporları ve sonuçları:</strong> maç kimliği, iki oyuncunun kimliği, skor, sonuç ve maçın nasıl bittiği, dereceli olup olmadığı, varsa arkadaş odası kodu, maç öncesi ve sonrası puanlar ve raporun geldiği zaman</li>
+      <li><strong>Haftalık sıralama ve ödüller:</strong> lig, puan, galibiyet, gol, hafta sonu sırası ve coin ya da rozet ödülleri</li>
+    </ul>
+    <p>IP adresi, tek bir adresten yapılabilecek kayıt sayısını sınırlamak (kötüye kullanımı önlemek) için kullanılır. Yalnızca kayıt anında bir kez saklanır ve konum çıkarmak için kullanılmaz. Bu sunucuya e-posta, telefon numarası, reklam kimliği ya da konum gönderilmez. Forma adınız, numaranız, ülkeniz ve haftalık puanınız sıralama tablosunda diğer oyunculara gösterilir.</p>
 
     <h3>2.6 Hiç toplamadıklarımız</h3>
     <p>Fotoğraf · kamera · mikrofon · konum (ne telefonun konumu ne de IP adresinden çıkarılan bir konum) · kişi listesi · SMS · telefon rehberi · telefon numarası · ödeme bilgisi. E-posta adresiniz yalnızca bize kendiniz yazarsanız elimize geçer.</p>
@@ -89,8 +97,8 @@
 
     <h2>4. Haklarınız (KVKK md. 11 ve GDPR)</h2>
     <ul>
-      <li><strong>Silme.</strong> Oyunu silmek telefonunuzdaki her şeyi siler. Uygulama içinde <strong>Ayarlar → Hesabımı sil</strong> seçeneği vardır; <a href="mailto:hello@zuvora.app">hello@zuvora.app</a> adresine yazarak da silebilirsiniz. Silme geri alınamaz ve kullanıcı adınızı, puanınızı, coin'lerinizi, ilerlemenizi ve sunucudaki hesap kaydınızı kaldırır.</li>
-      <li><strong>Silme sonrası tutulanlar.</strong> İki şey sınırlı süreyle kalır, ikisinin de sebebi sahtecilik önlemedir: (1) kullanıcı adınız 30 gün yeni kayıtlara kapalı tutulur ve bu sürede hiçbir yerde gösterilmez; (2) maç kayıtlarınız (tarih, sonuç, rakip kimliği) adınız çıkarılmış olarak en çok 30 gün tutulur. Bunun dışında hiçbir şey tutulmaz.</li>
+      <li><strong>Silme.</strong> Oyunu silmek telefonunuzdaki her şeyi siler. Uygulama içinde <strong>Ayarlar → Hesabımı sil</strong> seçeneği vardır; <a href="mailto:hello@zuvora.app">hello@zuvora.app</a> adresine yazarak da silebilirsiniz. Silme geri alınamaz: telefonunuzdaki kullanıcı adınızı, coin'lerinizi ve ilerlemenizi siler; lig sunucusunda forma adınızı ve ülkenizi, haftalık sıralama ve ödül kayıtlarınızı kaldırır ve telefonunuzun oturum anahtarını kalıcı olarak geçersiz kılar.</li>
+      <li><strong>Silme sonrası tutulanlar.</strong> Sahteciliği önlemek için lig sunucusunda, yalnızca rastgele kimliklerle ve hiçbir ad bağlanmadan şunlar kalır: oyuncu kaydınızdaki puan ve maç sayaçları, maç raporlarınız ve sonuçlarınız, cihaz kaydı (kurulum kimliği özeti, platform, uygulama sürümü, kayıt IP adresi). Sunucu bunları henüz belirli bir süre sonunda kendiliğinden silmiyor; bunların da silinmesini isterseniz <a href="mailto:hello@zuvora.app">hello@zuvora.app</a> adresine yazın.</li>
       <li><strong>Erişim ve düzeltme.</strong> Sunucuda sizin adınıza tutulan veriyi isteyebilir, yanlışsa düzelttirebilirsiniz.</li>
       <li><strong>İtiraz.</strong> Çevrimiçi oynamamayı seçerek eşleştirmeye hiçbir veri göndermemiş olursunuz; reklam tercihlerinizi Ayarlar'dan değiştirebilirsiniz.</li>
     </ul>
