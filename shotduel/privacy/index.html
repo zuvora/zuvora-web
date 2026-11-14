@@ -24,7 +24,7 @@
 <body>
   <div class="container">
     <h1>ShotDuel Privacy Policy</h1>
-    <p class="date">Last updated: 13 November 2026 · Controller: Zuvora — <a href="mailto:hello@zuvora.app">hello@zuvora.app</a></p>
+    <p class="date">Last updated: 14 November 2026 · Controller: Zuvora — <a href="mailto:hello@zuvora.app">hello@zuvora.app</a></p>
     <p class="lang"><a href="/shotduel/gizlilik/">Türkçe</a></p>
 
     <h2>1. Summary</h2>
@@ -35,8 +35,9 @@
       <li><strong>When an ad is shown:</strong> ads are served by Google AdMob, which uses your device's advertising ID and IP address (see 2.3).</li>
       <li><strong>When you report a player:</strong> you send us a report from your own e-mail app (see 2.4).</li>
       <li><strong>When you take part in the weekly league:</strong> your player id, shirt name and number, country (if you chose one) and match results go to Zuvora's league server in Germany (see 2.5).</li>
+      <li><strong>When you add a profile photo (optional):</strong> your photo is uploaded to the league server, checked for inappropriate content before it is stored, and shown only to the opponent of a match you play (see 2.6).</li>
     </ul>
-    <p>We do not want your photos or your contacts, we do not ask for your phone's location, and we do not work out a location from your IP address. You should still know that an IP address can reveal an <strong>approximate location</strong> (usually the city or region).</p>
+    <p>We do not need your photo; we only receive one if you add it to your profile yourself (see 2.6). We do not want your contacts, we do not ask for your phone's location, and we do not work out a location from your IP address. You should still know that an IP address can reveal an <strong>approximate location</strong> (usually the city or region).</p>
 
     <h2>2. What we collect</h2>
 
@@ -48,6 +49,7 @@
       <li>Your recovery code (to get your account back on a new phone)</li>
       <li>Sound, vibration and language preferences</li>
       <li>The list of players you have blocked</li>
+      <li>A copy of your profile photo, if you added one (written after the server accepts it)</li>
       <li>An error log that is never sent automatically; we cannot read it unless you send it to us</li>
     </ul>
 
@@ -57,6 +59,7 @@
       <li>Your display name</li>
       <li>Your shirt number and chosen cosmetics (kit, ball, trail, crest)</li>
       <li>Your character's look: skin tone, build, hair colour, hair and beard style, boots (in-game appearance only, never a photo)</li>
+      <li>Your profile photo, if you added one: your opponent's phone gets it from the league server, not through Photon (see 2.6)</li>
       <li>Your player id (a random id; not a name, e-mail or phone number)</li>
       <li>Your rating (for matchmaking)</li>
       <li>In an online match, your rating (shown in the game as RP) and the rank level worked out from it are shown to the players you are matched with.</li>
@@ -78,7 +81,7 @@
     <p>How Google uses this data: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a></p>
 
     <h3>2.4 Reporting and blocking players</h3>
-    <p>When you report a player's name, your e-mail app opens with a ready-made report to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>: the reported name, player id, match id and time. Sending it is up to you; if you do, we use your e-mail address and the report only to review inappropriate content. The players you block are kept on your phone only.</p>
+    <p>When you report a player's name, your e-mail app opens with a ready-made report to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>: the reported name, player id, match id and time. Sending it is up to you; if you do, we use your e-mail address and the report only to review inappropriate content. The players you block are kept on your phone only. When you report an opponent's profile photo, the report goes straight to the league server, not by e-mail (see 2.6).</p>
 
     <h3>2.5 League server</h3>
     <p>Since 30 October 2026 the weekly league runs on <strong>Zuvora's own server</strong> (shotduel-api.zuvora.app), hosted by Hetzner Cloud in <strong>Germany (EU)</strong>. Its database is backed up continuously to Cloudflare R2 storage restricted to the EU. The first time the app connects to the league it registers your phone; after every online match both phones send the server a signed match report. The server stores:</p>
@@ -97,16 +100,25 @@
     <p><strong>The copy on your phone.</strong> When the account on this phone is revoked for good (for example when the old phone you recovered it from takes it back within 7 days, or the account is deleted), the server says so in reply to the phone's next request; the phone deletes that account's credentials, username, member number, member-since date and recovery code from this phone, and your player name too if it is that account's name. Your flag, crest, look, installation ID and game progress stay on the phone; the name card opens to claim a name again, and the next name check creates an account as on a first launch. The game reads the time in the server's replies and keeps the difference from your phone's clock only in memory while the app is open, never saved; a request refused because your clock is far off is sent once more with that difference. Nothing extra is stored on the phone or on the server for this.</p>
     <p><strong>Deletion.</strong> When you delete your account in the game, your username is removed from your profile at once, your recovery code is revoked at once (it no longer opens any account) and your name holds are deleted; your old name is not given to anyone else for 30 days. When the 30 days are up, your member number, name history, recovery code digest, recovery events and every name report you are a party to are erased completely together with your player record.</p>
 
-    <h3>2.6 Never collected</h3>
-    <p>Photos · camera · microphone · location (neither your phone's location nor one worked out from your IP address) · contacts · SMS · phone number · payment details. We only get your e-mail address if you write to us yourself.</p>
+    <h3>2.6 Profile photo (optional)</h3>
+    <p>Adding a real photo to your profile is entirely optional; every part of the game works without one.</p>
+    <p><strong>How it is taken.</strong> You choose the photo yourself from your phone's gallery; the game never opens the camera and does not look at any other picture in your gallery. The picture you choose is cropped on your phone, scaled down to 256×256 pixels and saved as a new JPEG of at most 20 KB; picture details such as where and when it was taken (EXIF) are dropped in the process. Before your first upload the app asks you to accept the photo terms.</p>
+    <p><strong>Moderation.</strong> Before it is stored, the photo goes through an inappropriate-content (nudity and sexual content) classifier running on the infrastructure of Replicate, Inc. (USA). Only the photo is sent to Replicate; your name, player id and nothing else are not. This means the photo is transferred outside Türkiye and the European Union, to the USA. No face recognition, face detection or age estimation of any kind is performed. If the classifier finds the photo inappropriate, the photo is not stored; only an irreversible digest of the picture (SHA-256) is kept so that the same picture cannot be uploaded again. If the check is not available at that moment, the photo is not accepted.</p>
+    <p><strong>What the server keeps.</strong> An accepted photo is kept on the league server in Germany, linked to your player record: the photo itself, its digest (SHA-256), its status (live, under review or rejected), the version of the terms you accepted, and the upload and review times. To limit abuse your upload count is kept too (one upload a minute, at most 10 a day).</p>
+    <p><strong>Who sees it.</strong> Your photo is not public and does not appear in the league table. Only the opponent of an online match you play sees it: both phones declare the match to the league server, and your opponent's phone can fetch the photo only within the next 30 minutes. The photo is shown on the pre-match versus card and on the report screen. Your opponent's phone does not save the photo, keeps it in memory only, and drops it at their next match against someone else, or at once if they report or block you. These match pairing records (match id, both player ids and the time) are deleted after 24 hours.</p>
+    <p><strong>Reports.</strong> If an opponent finds your photo inappropriate they can report it in the app by choosing a reason. The report goes straight to the league server; the ids of the reporting and the reported player, the match id, the photo's digest, the reason and the time are recorded. A player can only report an opponent they have played and can send at most 10 photo reports in 24 hours. A reported photo is hidden at once until a person at Zuvora reviews it. After the review the photo is either put back live or rejected. A rejected photo is shown to no one; it stays on record until you remove it, replace it with a new one or delete your account, and its digest is kept so that the same picture cannot be uploaded again.</p>
+    <p><strong>Removal.</strong> You can remove your photo from your profile at any time: the photo on the server is deleted at once, and the copy on your phone is deleted after the server confirms. If you delete your account, your photo, your upload counter, your match pairing records and the photo reports you filed are deleted at once (see 4).</p>
+
+    <h3>2.7 Never collected</h3>
+    <p>Camera · other photos in your gallery (only the one photo you choose for your profile is taken, see 2.6) · microphone · location (neither your phone's location nor one worked out from your IP address) · contacts · SMS · phone number · payment details. We only get your e-mail address if you write to us yourself.</p>
 
     <h2>3. Children</h2>
-    <p>ShotDuel is for ages 13 and over. We do not knowingly collect data from children under 13. If you think your child has left data with us, write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a> and we will delete it.</p>
+    <p>ShotDuel is for ages 13 and over. We do not knowingly collect data from children under 13. A profile photo reported for showing a child is reviewed first. If you think your child has left data with us, write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a> and we will delete it.</p>
 
     <h2>4. Your rights (GDPR / KVKK art. 11)</h2>
     <ul>
-      <li><strong>Deletion.</strong> Deleting the app deletes everything held on your phone. <strong>Settings → Delete my account</strong> deletes your username, coins and progress on the phone and, on the league server, immediately removes your shirt name and country, your weekly standings and rewards, the IP address your phone registered from and the install-id hash, and permanently disables your phone's sign-in key; you may also write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>. It cannot be undone.</li>
-      <li><strong>What is kept after deletion.</strong> For fraud prevention the league server keeps, for at most 30 days, under the random ids only and with no name attached: your player record's rating and match counters, your match reports and results, and the device record (random device id, platform, app version). 30 days after deletion the server erases these automatically. A match you played also belongs to your opponent: their copy of the result stays, but your id is removed from it. If you want this to happen sooner, write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>.</li>
+      <li><strong>Deletion.</strong> Deleting the app deletes everything held on your phone. <strong>Settings → Delete my account</strong> deletes your username, coins and progress on the phone and, on the league server, immediately removes your shirt name and country, your weekly standings and rewards, the IP address your phone registered from, the install-id hash, your profile photo and the photo reports you filed, and permanently disables your phone's sign-in key; you may also write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>. It cannot be undone.</li>
+      <li><strong>What is kept after deletion.</strong> For fraud prevention the league server keeps, for at most 30 days, under the random ids only and with no name attached: your player record's rating and match counters, your match reports and results, the device record (random device id, platform, app version) and closed reports about your photo (without the photo itself). The digest (SHA-256) of a rejected photo stays, linked to no id. 30 days after deletion the server erases these automatically. A match you played also belongs to your opponent: their copy of the result stays, but your id is removed from it. If you want this to happen sooner, write to <a href="mailto:hello@zuvora.app">hello@zuvora.app</a>.</li>
       <li><strong>Access and correction.</strong> You may request access to, or correction of, anything held for you.</li>
       <li><strong>Objection.</strong> Choosing not to play online means nothing is sent to matchmaking; you can change your ad choices in Settings.</li>
     </ul>
